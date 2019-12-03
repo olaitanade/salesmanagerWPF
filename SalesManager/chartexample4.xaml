@@ -1,0 +1,33 @@
+﻿<Page x:Class="SalesManager.chartexample4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="chartexample4"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:local="clr-namespace:SalesManager"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DataContext="{d:DesignInstance local:chartexample4}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <lvc:PieChart LegendLocation="Bottom">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Waw" Values="3" DataLabels="True" PushOut="20" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Futa bread" Values="4" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Ariel" Values="6" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                <lvc:PieSeries Title="Sardine" Values="2" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <Button Name="next_btn" Click="next_btn_Click" Margin="10" Grid.Row="1">next</Button>
+    </Grid>
+</Page>

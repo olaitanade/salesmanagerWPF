@@ -1,0 +1,101 @@
+﻿<Page x:Class="SalesManager.Inventory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="600"
+	Title="Inventory">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="back_btn" Click="back_btn_Click"  Margin="0,10,0,5" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25">
+            <materialDesign:PackIcon Kind="ArrowLeft"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" >Inventory</TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Magnify" VerticalAlignment="Center" Margin="2"></materialDesign:PackIcon>
+                <TextBox Name="product_searchtxt" materialDesign:TextFieldAssist.Hint="Enter a search" Margin="2" TextChanged="product_searchtxt_TextChanged" MinWidth="200"></TextBox>
+            </StackPanel>
+            <ScrollViewer>
+                <ListView Name="product_list">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Path=Name}"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding Path=Amt_Instock}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,20,20,10" Width="250">
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5" Padding="7" >
+                <Grid DataContext="{Binding ElementName=product_list,Path=SelectedItem}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5">Name:</TextBlock>
+                    <TextBlock Name="name_txtblk" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Path=Name}"></TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5">Category:</TextBlock>
+                    <TextBlock Name="category" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Path=Category}"></TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5">Price:</TextBlock>
+                    <TextBlock Name="price_txtblk" Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding Path=Price}"></TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5">Tax:</TextBlock>
+                    <TextBlock Name="tax_txtblk" Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding Path=Tax}"></TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center">Amount in stock:</TextBlock>
+                    <TextBox Name="amtinstk_txtblk" IsEnabled="False" Text="{Binding Path=Amt_Instock,Mode=TwoWay}" Grid.Row="4" TextChanged="amtinstk_txtblk_TextChanged" Grid.Column="1" Margin="5"></TextBox>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Margin="5" VerticalAlignment="Center">Total:</TextBlock>
+                    <TextBlock Name="total_txtblk" Grid.Row="5" Grid.Column="1" Margin="5"></TextBlock>
+                </Grid>
+            </materialDesign:Card>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="del_btn" Click="del_btn_Click" Grid.Column="0">del</Button>
+                <Button Name="edt_btn" Click="edit_Click" Grid.Column="1">edit</Button>
+                <Button Name="save_btn" Click="save_btn_Click" Grid.Column="1" IsEnabled="False" Visibility="Hidden">save</Button>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <TextBlock>To add new inventory</TextBlock>
+            <Button Name="add_btn" Click="add_btn_Click">Add</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="5">
+            <TextBlock HorizontalAlignment="Center">Tellula Inc.</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Copyrights &#169;2016. All rights reserved.</TextBlock>
+        </StackPanel>
+    </Grid>
+    
+</Page>

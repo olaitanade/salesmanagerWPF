@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManager", "SalesManager\SalesManager.csproj", "{C28E6762-6ECB-4499-91B6-2A0FFD722C6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatsAppApi", "..\..\..\FiverrProjects\Chat-API-NET-master\WhatsAppApi\WhatsAppApi.csproj", "{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C28E6762-6ECB-4499-91B6-2A0FFD722C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28E6762-6ECB-4499-91B6-2A0FFD722C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28E6762-6ECB-4499-91B6-2A0FFD722C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28E6762-6ECB-4499-91B6-2A0FFD722C6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC9096A-C4D2-40C7-BE7B-D98ACAB3BD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

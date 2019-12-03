@@ -1,0 +1,22 @@
+﻿<Controls:MetroWindow x:Class="SalesManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"       
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+                      
+        Title="Leaf" Height="500" Width="750">
+    <Frame NavigationUIVisibility="Hidden" Loaded="Page_Loaded" Source="LogIn.xaml">
+
+    </Frame>
+</Controls:MetroWindow>

@@ -1,0 +1,30 @@
+﻿<Page x:Class="SalesManager.chartExample"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:lib="clr-namespace:SalesManager"
+      d:DesignHeight="300" d:DesignWidth="300" d:DataContext="d:DesignInstance sections:chartExample"
+      Loaded="Page_Loaded"
+	Title="chartExample">
+
+    <Grid Margin="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <lvc:CartesianChart Name="cartesian_chart" Grid.Row="0" Grid.Column="0" Margin="10">
+            
+        </lvc:CartesianChart>
+        <TextBlock Grid.Row="0" Grid.Column="1">Bar chart(ColumnSeries)</TextBlock>
+        <lib:rowseries  Grid.Row="1"/>
+        <Button Name="nextbtn" Click="nextbtn_Click" Grid.Row="1" Grid.Column="1" Margin="10" >next</Button>
+    </Grid>
+</Page>

@@ -1,0 +1,70 @@
+﻿<Page x:Class="SalesManager.AddProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d" d:DesignWidth="500"
+	Title="AddProduct">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Name="back_btn" Click="back_btn_Click"  Margin="0,10,0,5" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25">
+            <materialDesign:PackIcon Kind="ArrowLeft"></materialDesign:PackIcon>
+        </Button>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,5">
+
+            <Grid>
+                <TextBlock FontSize="25" HorizontalAlignment="Center" Margin="0,10,0,10">Add Product</TextBlock>
+                
+            </Grid>
+            
+            <materialDesign:ColorZone  Mode="PrimaryMid" CornerRadius="5" materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                                  Margin="10" Padding="5" MinWidth="400" Height="250" HorizontalAlignment="Center">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center">Product Info</TextBlock>
+                    <Grid Name="product_grid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="5">Name:</TextBlock>
+                        <TextBox Name="name_txtbx" Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Path=Name,Mode=TwoWay}"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="5">Category:</TextBlock>
+                        <TextBox Name="category_txtbx" Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Path=Category,Mode=TwoWay}"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="5">Description:</TextBlock>
+                        <TextBox Name="description_txtbx" Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding Path=Description,Mode=TwoWay}"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="5">Price Tag:</TextBlock>
+                        <TextBox Name="pricetag_txtbx" Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding Path=Price,Mode=TwoWay}"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Margin="5">Tax:</TextBlock>
+                        <TextBox Name="tax_txtbx" Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding Path=Tax,Mode=TwoWay}"></TextBox>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0" Margin="5">Amount in stock:</TextBlock>
+                        <TextBox Name="amtinstk_txtbx" Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding Path=Amt_Instock,Mode=TwoWay}"></TextBox>
+                    </Grid>
+                </StackPanel>
+            </materialDesign:ColorZone>
+            <Button Name="add_btn" Click="add_btn_Click"  HorizontalAlignment="Right" Width="60" Height="60" Margin="10,10,0,10" Style="{DynamicResource MaterialDesignFloatingActionButton}">
+                <materialDesign:PackIcon Kind="ContentSave"></materialDesign:PackIcon>
+            </Button>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center">Tellula Inc.</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Copyrights &#169;2016. All rights reserved.</TextBlock>
+        </StackPanel>
+    </Grid>
+    
+</Page>

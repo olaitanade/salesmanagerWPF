@@ -1,0 +1,45 @@
+﻿<Page x:Class="SalesManager.LogIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="316.495" d:DesignWidth="421.65"
+      Loaded="Page_Loaded"
+	Title="LogIn">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Margin="0,10,0,0" FontSize="30"  HorizontalAlignment="Center" FontFamily="{StaticResource MaterialDesignFont}">Welcome To Leaf</TextBlock>
+        <materialDesign:ColorZone MaxWidth="300" Margin="5,15"  Grid.Row="1" Padding="20,15" Mode="Standard" CornerRadius="10" materialDesign:ShadowAssist.ShadowDepth="Depth5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Admin</TextBlock>
+                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="5" Kind="Account"></materialDesign:PackIcon>
+                <TextBox Name="username" FontSize="15" materialDesign:TextFieldAssist.Hint="Username" Height="25" Grid.Row="1" Grid.Column="1" Margin="3"></TextBox>
+                <materialDesign:PackIcon Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Kind="Key" Margin="5"></materialDesign:PackIcon>
+                <PasswordBox Name="password"  FontSize="15" materialDesign:TextFieldAssist.Hint="Password" Height="25" Grid.Row="2" Grid.Column="1" Margin="3"></PasswordBox>
+                <Button Name="logIn_btn" Click="logIn_btn_Click" Grid.Row="3" Grid.ColumnSpan="2" Margin="30,10">Log in</Button>
+            </Grid>
+        </materialDesign:ColorZone>
+        <StackPanel Grid.Row="2">
+            <TextBlock HorizontalAlignment="Center">Tellula Inc.</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Copyrights &#169;2016. All rights reserved.</TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
